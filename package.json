@@ -1,0 +1,18 @@
+{
+  "name": "postaway",
+  "version": "1.0.0",
+  "description": "Social media backend REST-API that empowers users to post comment, like,send friend request and reset their password using OTP enhanced security ",
+  "main": "env.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "sukesh",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.1"
+  }
+}
