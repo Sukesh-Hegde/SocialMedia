@@ -45,4 +45,56 @@ export default class UserRepository{
         }
     }
 
+    async logoutAllDevices(userId){
+        try {
+            const userTokens = await BlacklistTokenModel.find({ userId });
+
+            for (const token of userTokens) {
+             return await token.remove();
+            }
+        } catch (error) {
+            throw new ApplicationError("Something went wrong while loging out from all Devices ", 500);
+        }
+    }
+    async getusr(id){
+        try {
+            const user = await UserModel.findById(id);
+            return user
+        } catch (err) {
+            console.log(err);
+            throw new ApplicationError("Something went wrong while getting one user", 500);
+        }
+    }
+
+    async getAll(){
+        try {
+            const allUser = await UserModel.find();
+            return allUser
+        } catch (err) {
+            console.log(err);
+            throw new ApplicationError("Something went wrong while getting one user", 500);
+        }
+    }
+
+    async Update(id, userID, name,email,gender){
+        console.log(id,userID);
+        if(id === userID){
+            try {
+                const updated = await UserModel.findByIdAndUpdate(id,{
+                    name,
+                    email,
+                    gender,
+                },{ new: true });
+                return updated
+            } catch (err) {
+                console.log(err);
+                throw new ApplicationError("Something went wrong while getting one user", 500);
+            }
+        }else{
+            res.status(403).send("Access Denied! You can only update your own profile");
+            return err
+        }
+        
+    }
+
 }

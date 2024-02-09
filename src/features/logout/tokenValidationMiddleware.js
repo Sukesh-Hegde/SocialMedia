@@ -15,6 +15,7 @@ export const verifyToken = async (req, res, next) => {
     }
     const payload = jwt.verify(token, "AIb6d35fvJM4O9pXqXQNla2jBCH9kuLz");
     req.userID = payload.userID;
+    // console.log(payload);
 
     // Continue processing if the token is not blacklisted
     next();

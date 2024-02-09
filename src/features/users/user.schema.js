@@ -15,7 +15,7 @@ export const userSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        enum: ['Male', 'female','other']
+        enum: ['male', 'female','other']
     },
     isAdmin : {
         type: Boolean,
