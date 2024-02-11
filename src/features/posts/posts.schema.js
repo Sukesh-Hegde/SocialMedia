@@ -20,3 +20,5 @@ export const postSchema = new mongoose.Schema({
         ref:"Comment"
     }]
 })
+
+export const PostModel = mongoose.model("Post", postSchema);

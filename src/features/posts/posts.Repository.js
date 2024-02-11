@@ -1,9 +1,8 @@
-import { postSchema } from "./posts.schema.js";
-import mongoose from "mongoose";
+import { PostModel } from "./posts.schema.js";
 import { ApplicationError } from "../../error-handler/applicationError.js";
 
 // creating model from schema.
-const PostModel = mongoose.model("Post", postSchema);
+// export var PostModel = mongoose.model("Post", postSchema);
 
 // const LikeModel = mongoose.model('Like',likeSchema);
 

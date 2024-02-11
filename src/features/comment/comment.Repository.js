@@ -1,10 +1,7 @@
-import mongoose from "mongoose";
-import { commentSchema } from "./comment.schema.js";
+import { commentModel } from "./comment.schema.js";
 import { ApplicationError } from "../../error-handler/applicationError.js";
 
 // creating model from schema.
-const commentModel = mongoose.model('Comment', commentSchema)
-
 
 export default class CommentRepository{
     async add(newComment){
@@ -16,5 +13,4 @@ export default class CommentRepository{
             throw new ApplicationError("Something went wrong with database", 500);
         }
     }
-
 }
