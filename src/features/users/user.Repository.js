@@ -6,6 +6,8 @@ import BlacklistTokenModel from "../logout/logout.schema.js";
 // creating model from schema.
 const UserModel = mongoose.model('User', userSchema)
 
+
+
 export default class UserRepository{
     async signUp(user){
         try{
@@ -36,18 +38,19 @@ export default class UserRepository{
       }
       }
 
-    async logout(token){
+    async logout(token,userId){
         try {
-        const blacklistedToken = new BlacklistTokenModel({ token });
+        const blacklistedToken = new BlacklistTokenModel({ token,userId });
         return await blacklistedToken.save();
         } catch (error) {
             throw new ApplicationError("Something went wrong while loging out ", 500);
         }
     }
 
-    async logoutAllDevices(userId){
+    async logoutAllDevices(userID){
         try {
-            const userTokens = await BlacklistTokenModel.find({ userId });
+            const userTokens = await BlacklistTokenModel.find({ userId:userID });
+            console.log(userTokens);
 
             for (const token of userTokens) {
              return await token.remove();

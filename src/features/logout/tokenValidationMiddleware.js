@@ -2,7 +2,10 @@ import BlacklistTokenModel from "./logout.schema.js";
 import jwt from "jsonwebtoken";
 
 export const verifyToken = async (req, res, next) => {
-  const token = req.headers["authorization"]; //
+  const token = req.headers["authorization"]; 
+  // const token = req.cookie;
+  // console.log(token);
+
   if (!token) {
     return res.status(401).send("Unauthorized");
   }
