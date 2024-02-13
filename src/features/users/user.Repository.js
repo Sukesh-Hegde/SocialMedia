@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { ApplicationError } from "../../error-handler/applicationError.js";
 import BlacklistTokenModel from "../logout/logout.schema.js";
 import { UserModel } from "./user.schema.js";
+import loginTokenModel from "./login.schema.js";
 
 // creating model from schema.
 // const UserModel = mongoose.model('User', userSchema)
@@ -43,21 +44,41 @@ export default class UserRepository {
     }
   }
 
-  async logoutAllDevices(userID) {
+  async loginRecord(token, userId){
     try {
-      const userTokens = await BlacklistTokenModel.find({ userId: userID });
-      console.log(userTokens);
-
-      for (const token of userTokens) {
-        return await token.remove();
-      }
+      const LoginTokenModel = new loginTokenModel({ token, userId });
+      return await LoginTokenModel.save();
     } catch (error) {
-      throw new ApplicationError(
-        "Something went wrong while loging out from all Devices ",
-        500
-      );
+      throw new ApplicationError("Something went wrong while loging out ", 500);
     }
   }
+
+  // async logoutAllDevices(userID) {
+  //   try {
+  //     // const userTokens = await BlacklistTokenModel.find({ userId: userID });
+  //     const loginTokens = await loginTokenModel.find({ userId: userID });
+  //     console.log(loginTokens);
+  //     // const Blacklist = new BlacklistTokenModel(loginTokens);
+  //     // await Blacklist.save();
+
+  //     // return await  BlacklistTokenModel.push({ loginTokens});
+  //     // console.log(userTokens);
+ 
+  //     for (const token of loginTokens) {
+  //       return await blacklistedToken.save();
+  //     }
+
+  //     // for (const token of userTokens) {
+  //     //   return await token.remove();
+  //     // }
+      
+  //   } catch (error) {
+  //     throw new ApplicationError(
+  //       "Something went wrong while loging out from all Devices ",
+  //       500
+  //     );
+  //   }
+  // }
   async getusr(id) {
     try {
       const user = await UserModel.findById(id);

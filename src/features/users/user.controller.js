@@ -40,8 +40,6 @@ export default class UserController {
       } else {
         //2.compare password with hashed password
         const result = await bcrypt.compare(req.body.password, user.password);
-        //  console.log(req.body.password);
-        //  console.log(user.password);
 
         if (result) {
           // 3. Create token.
@@ -55,11 +53,17 @@ export default class UserController {
               expiresIn: "1h",
             }
           );
-          res.cookie("token", token, { maxAge: 1 * 60 * 60 * 1000, httpOnly: true })
-          .json({ success: true, msg: "user login successful", token });
+          const userID = user._id; //requesting directly from token
+          await this.userRepository.loginRecord(token, userID);
+
+          res
+            .cookie("token", token, {
+              maxAge: 1 * 60 * 60 * 1000,
+              httpOnly: true,
+            })
+            .json({ success: true, msg: "user login successful", token });
 
           // 4. Send token.
-          
         } else {
           return res.status(400).send("Incorrect password ");
         }
@@ -72,10 +76,10 @@ export default class UserController {
 
   logout = async (req, res) => {
     const { token } = req.body;
-    const userID =  req.userID; //requesting directly from token
+    const userID = req.userID; //requesting directly from token
     try {
       // // Add the token to the blacklist
-      const blacklistedToken = await this.userRepository.logout(token,userID);
+      const blacklistedToken = await this.userRepository.logout(token, userID);
 
       res.status(200).json("Logout successful");
     } catch (error) {
@@ -87,13 +91,13 @@ export default class UserController {
   async logoutAllDevices(req, res) {
     const userID = req.userID;
     try {
-      const logoutAll = await this.userRepository.logoutAllDevices( userID );
-      if(logoutAll){
+      const logoutAll = await this.userRepository.logoutAllDevices(userID);
+      if (logoutAll) {
         res.status(200).json("Logout from all devices successful");
       }
     } catch (error) {
       console.log(error);
-       throw new ApplicationError("Something went wrong ", 500);
+      throw new ApplicationError("Something went wrong ", 500);
     }
   }
 
@@ -112,7 +116,7 @@ export default class UserController {
     }
   }
 
-  async getAllUser(req,res){
+  async getAllUser(req, res) {
     try {
       const user = await this.userRepository.getAll();
       res.status(200).send(user);
@@ -122,26 +126,30 @@ export default class UserController {
     }
   }
 
-  async updateDetails(req,res){
+  async updateDetails(req, res) {
     const id = req.params.id;
-    const userID =  req.userID; //requesting directly from token
+    const userID = req.userID; //requesting directly from token
     const { name, email, gender } = req.body;
-    
-      try {
-        // const update =  {
-        //   name,
-        //   email,
-        //   gender,
-        // };
-        const user = await this.userRepository.Update(id, userID,name,email,gender);
-        res.status(200).json(user);
-      } catch (err) {
-        console.log(err);
-        return res.status(200).send("Something went wrong while updating details");
-      }
-    
-    
-    
-  }
 
+    try {
+      // const update =  {
+      //   name,
+      //   email,
+      //   gender,
+      // };
+      const user = await this.userRepository.Update(
+        id,
+        userID,
+        name,
+        email,
+        gender
+      );
+      res.status(200).json(user);
+    } catch (err) {
+      console.log(err);
+      return res
+        .status(200)
+        .send("Something went wrong while updating details");
+    }
+  }
 }
