@@ -8,7 +8,7 @@ likeRouter.get("/:id", (req, res) => {
   likeController.getlikes(req, res);
 });
 
-likeRouter.post("/:id/likeAndDislike", (req, res) => {
+likeRouter.post("/toggle/:id", (req, res) => {
   likeController.likeAndDislike(req, res);
 });
 

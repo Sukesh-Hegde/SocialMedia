@@ -1,6 +1,7 @@
 import CommentRepository from "./comment.Repository.js";
 import { PostModel } from "../posts/posts.schema.js";
 import { commentModel } from "./comment.schema.js";
+
 export default class commentController {
   constructor() {
     this.commentRepository = new CommentRepository();

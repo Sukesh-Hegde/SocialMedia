@@ -7,7 +7,7 @@ const likeSchema = new mongoose.Schema({
   },
   likeable:{
     type: mongoose.Schema.Types.ObjectId,
-    refPath:'on_model'//this will be a separate attribute , which specify which type of objects can appear here, i.e product or catagory
+    refPath:'on_model'//this will be a separate attribute , which specify which type of objects can appear here, i.e post or comment
 },
 on_model:{
   type:String,
@@ -17,7 +17,6 @@ on_model:{
     type: Date,
     default: Date.now
   },
-  
 });
 
 const LikeModel = mongoose.model('Like', likeSchema);

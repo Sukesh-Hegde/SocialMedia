@@ -44,7 +44,7 @@ export default class UserRepository {
     }
   }
 
-  async loginRecord(token, userId){
+  async loginRecord(token, userId) {
     try {
       const LoginTokenModel = new loginTokenModel({ token, userId });
       return await LoginTokenModel.save();
@@ -53,32 +53,25 @@ export default class UserRepository {
     }
   }
 
-  // async logoutAllDevices(userID) {
-  //   try {
-  //     // const userTokens = await BlacklistTokenModel.find({ userId: userID });
-  //     const loginTokens = await loginTokenModel.find({ userId: userID });
-  //     console.log(loginTokens);
-  //     // const Blacklist = new BlacklistTokenModel(loginTokens);
-  //     // await Blacklist.save();
-
-  //     // return await  BlacklistTokenModel.push({ loginTokens});
-  //     // console.log(userTokens);
- 
-  //     for (const token of loginTokens) {
-  //       return await blacklistedToken.save();
-  //     }
-
-  //     // for (const token of userTokens) {
-  //     //   return await token.remove();
-  //     // }
-      
-  //   } catch (error) {
-  //     throw new ApplicationError(
-  //       "Something went wrong while loging out from all Devices ",
-  //       500
-  //     );
-  //   }
-  // }
+  //moves all the code from loginlist to black list 
+  async logoutAllDevices(userID) {
+    try {
+      const loginTokens = await loginTokenModel.find({ userId: userID });
+      //moving all file to loginlist
+      for (const token of loginTokens) {
+        const Blacklist = new BlacklistTokenModel({
+          token: token.token,
+          userId: userID,
+        });
+        return await Blacklist.save();
+      }
+    } catch (error) {
+      throw new ApplicationError(
+        "Something went wrong while loging out from all Devices ",
+        500
+      );
+    }
+  }
   async getusr(id) {
     try {
       const user = await UserModel.findById(id);

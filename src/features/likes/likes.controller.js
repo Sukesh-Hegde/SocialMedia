@@ -40,24 +40,22 @@ export default class LikeController {
     }
   }
 
-  async getlikes(req,res){
+  async getlikes(req, res) {
     const Id = req.params.id;
     try {
-      console.log(Id);
-        const post = await this.LikeRepository.getPostId(Id);
-        console.log(post);
-        if (post) {
-            const type = "Post";
-            const likes = await this.LikeRepository.getLikes(type, Id);
-            return res.status(200).send(likes);
-          }else{
+      const post = await this.LikeRepository.getPostId(Id);
+      if (post) {
+        const type = "Post";
+        const likes = await this.LikeRepository.getLikes(type, Id);
+        return res.status(200).send(likes);
+      } else {
         const type = "Comment";
-          const likes = await this.LikeRepository.getLikes(type, Id);
-          return likes;
-       }
-      } catch (err) {
-        console.log(err);
-        return res.status(200).send("Something went wrong");
+        const likes = await this.LikeRepository.getLikes(type, Id);
+        return res.status(200).send(likes);
       }
+    } catch (err) {
+      console.log(err);
+      return res.status(200).send("Something went wrong");
+    }
   }
 }
