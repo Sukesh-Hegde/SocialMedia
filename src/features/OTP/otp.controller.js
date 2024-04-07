@@ -29,13 +29,13 @@ class OTPController {
         const transporter = nodemailer.createTransport({
           service: "gmail",
           auth: {
-            user: "sukeshhegde@gmail.com",
-            pass: "get pass from google account",
+            user: "sukeshhegde09ss@gmail.com",
+            pass: "gt pass from googlee account",
           },
         });
 
         const mailOptions = {
-          from: "sukeshhegde@gmail.com",
+          from: "sukeshhegde09ss@gmail.com",
           to: user.email,
           subject: "Password Reset OTP",
           text: `Your OTP for password reset is: ${otp}`,

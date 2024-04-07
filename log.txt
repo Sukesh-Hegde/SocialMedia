@@ -1,1 +1,80 @@
 {"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Gaurav Tripathi\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"Male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Gaurav Tripathi\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/6612b45500c21fe8288b98cb - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/6612b45500c21fe8288b98cb - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/6612b45500c21fe8288b98cb - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/6612bbadbc14fcaa15eefe4b - {}","service":"request-logging"}
+{"level":"info","message":"/api/likes/6612bbadbc14fcaa15eefe4b - {}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/likes/6612bbadbc14fcaa15eefe4b - {}","service":"request-logging"}
+{"level":"info","message":"/api/likes/toggle/6612bbadbc14fcaa15eefe4b - {}","service":"request-logging"}
+{"level":"info","message":"/api/comments/6612bbadbc14fcaa15eefe4b - {\"content\":\"This is a nice post\"}","service":"request-logging"}
+{"level":"info","message":"/api/comments/6612bbadbc14fcaa15eefe4b - {}","service":"request-logging"}
+{"level":"info","message":"/api/friends/add-friend/6612bbadbc14fcaa15eefe4b - {}","service":"request-logging"}
+{"level":"info","message":"/api/friends/add-friend/6612b45500c21fe8288b98cb - {}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Gaurav Tripathi\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/verify - {\"otp\":997758,\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Sukesh Hegde\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"Male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Sukesh Hegde\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Sukesh Hegde\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Sukesh Hegde\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"User2\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"User3\",\"email\":\"***\",\"password\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/get-all-details - {}","service":"request-logging"}
+{"level":"info","message":"/api/users/get-details/6612d7199013c968d2b47e39 - {}","service":"request-logging"}
+{"level":"info","message":"/api/users/update-details/6612d7199013c968d2b47e39 - {\"name\":\"sudesh\",\"email\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/update-details/6612d7199013c968d2b47e39 - {\"name\":\"sudesh\",\"email\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/update-details/6612d7199013c968d2b47e39 - {\"name\":\"sudesh\",\"email\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/update-details/6612d6fc9013c968d2b47e37 - {\"name\":\"sudesh\",\"email\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/update-details/6612d6fc9013c968d2b47e37 - {\"name\":\"Sukesh Hegde\",\"email\":\"***\",\"gender\":\"male\"}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/6612d8bef9ec42feb00f15a2 - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts/all - {}","service":"request-logging"}
+{"level":"info","message":"/api/posts - {}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/comments/6612d8bef9ec42feb00f15a2 - {\"content\":\"This is a nice post\"}","service":"request-logging"}
+{"level":"info","message":"/api/comments/6612d8bef9ec42feb00f15a2 - {}","service":"request-logging"}
+{"level":"info","message":"/api/comments/6612d9def9ec42feb00f15b1 - {\"content\":\"updated comment\"}","service":"request-logging"}
+{"level":"info","message":"/api/comments/6612d8bef9ec42feb00f15a2 - {}","service":"request-logging"}
+{"level":"info","message":"/api/comments/6612d9def9ec42feb00f15b1 - {}","service":"request-logging"}
+{"level":"info","message":"/api/comments/6612d9def9ec42feb00f15b1 - {}","service":"request-logging"}
+{"level":"info","message":"/api/likes/6612d8bef9ec42feb00f15a2 - {}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/likes/6612d8bef9ec42feb00f15a2 - {}","service":"request-logging"}
+{"level":"info","message":"/api/likes/6612d928f9ec42feb00f15a7 - {}","service":"request-logging"}
+{"level":"info","message":"/api/likes/toggle/6612d8bef9ec42feb00f15a2 - {}","service":"request-logging"}
+{"level":"info","message":"/api/likes/6612d928f9ec42feb00f15a7 - {}","service":"request-logging"}
+{"level":"info","message":"/api/likes/6612d8bef9ec42feb00f15a2 - {}","service":"request-logging"}
+{"level":"info","message":"/api/friends/add-friend/6612d6fc9013c968d2b47e37 - {}","service":"request-logging"}
+{"level":"info","message":"/api/friends/add-friend/6612d7289013c968d2b47e3b - {}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"***\",\"password\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/send - {\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/otp/verify - {\"otp\":198166,\"email\":\"***\"}","service":"request-logging"}
+{"level":"info","message":"/api/posts/6612d928f9ec42feb00f15a7 - {}","service":"request-logging"}
